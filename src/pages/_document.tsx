@@ -3,7 +3,8 @@ import Document, {
 	DocumentContext, DocumentInitialProps,
 	Html, Head, Main, NextScript
 } from 'next/document';
-import { ServerStyleSheet } from 'styled-components'
+import { ServerStyleSheet } from 'styled-components';
+
 
 export default class MyDocument extends Document {
 	static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -34,9 +35,7 @@ export default class MyDocument extends Document {
 	render(): JSX.Element {
 		return (
 			<Html lang="en">
-				<Head>
-					<meta charSet="UTF-8" />
-				</Head>
+				<Head />
 				<body>
 					<Main />
 					<NextScript />
