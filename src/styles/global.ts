@@ -8,11 +8,16 @@ export default createGlobalStyle`
 		outline: 0;
 		box-sizing: border-box;
 		border-collapse: collapse;
-		font-size: 14px;
+		font-size: 16px;
 		font-weight: 400;
+		font-family: 'Helvetica', sans-serif;
 	}
 
-	body {
-		height: 100vh;
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body, #__next {
+		background: ${({ theme }) => theme.color.background}
 	}
 `;
