@@ -10,7 +10,7 @@ export default createGlobalStyle`
 		border-collapse: collapse;
 		font-size: 16px;
 		font-weight: 400;
-		font-family: 'Helvetica', sans-serif;
+		font-family: 'Roboto', 'Helvetica', sans-serif;
 	}
 
 	html {
@@ -18,6 +18,6 @@ export default createGlobalStyle`
 	}
 
 	body, #__next {
-		background: ${({ theme }) => theme.color.background}
+		background: ${({ theme }) => theme.color.background};
 	}
 `;

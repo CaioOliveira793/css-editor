@@ -3,7 +3,7 @@ export default {
 		primary: '#A221EC',
 		secondary: '#D8B5ED',
 
-		background: '#FDFDFD',
+		background: '#f2e9f7',
 
 		primaryText: '#30292F',
 		secondaryText: '#3F4045',

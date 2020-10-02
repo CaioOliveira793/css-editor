@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import Link from 'next/link';
 import { useTransform, useViewportScroll } from 'framer-motion';
 import { FaMinus } from 'react-icons/fa';
 
 import {
 	Container, StyledHeader, PresentationContainer, TextSection, AnimatedText,
 	AnimationSection
-} from '../styles/pages/home';
+} from '../styles/pages/index';
+
+import AnchorButton from '../components/AnchorButton';
 
 
 const Home: React.FC = () => {
@@ -24,6 +27,7 @@ const Home: React.FC = () => {
 		opacity: useTransform(scrollYProgress, [0.75, 0.9], [0, 1]),
 		translateX: useTransform(scrollYProgress, [0.8, 0.85], [-48, 0]),
 	};
+
 
 	return (
 		<Container>
@@ -63,6 +67,9 @@ const Home: React.FC = () => {
 					<FaMinus size={32} />
 					<h2>generate</h2>
 					<p>Use the code generated as you want.</p>
+					<Link href="/properties">
+						<AnchorButton>Start now</AnchorButton>
+					</Link>
 				</AnimatedText>
 			</TextSection>
 

@@ -10,7 +10,7 @@ const animatedSectionTopWithGap32 = '(78px + 137px + (2 * 32px))';
 export const Container = styled.div`
 	display: grid;
 	grid-template-rows: 78px 117px calc(100vh - ${animatedSectionTop});
-	grid-template-columns: 1fr 2fr;
+	grid-template-columns: 2fr 3fr;
 	grid-template-areas:
 		'header header'
 		'presentation presentation'
@@ -54,10 +54,13 @@ export const PresentationContainer = styled.div`
 		font-size: 32px;
 		letter-spacing: 2px;
 		margin-bottom: 32px;
+
+		color: ${({ theme }) => theme.color.primary};
 	}
 
 	> p {
 		margin-bottom: 8px;
+		color: ${({ theme }) => theme.color.secondaryText};
 	}
 
 	@media (min-height: 800px) {
@@ -101,6 +104,8 @@ export const AnimatedText = styled(motion.div)`
 	> svg {
 		position: relative;
 		top: 12px;
+
+		color: ${({ theme }) => theme.color.primary};
 	}
 
 	> h2 {
@@ -108,9 +113,15 @@ export const AnimatedText = styled(motion.div)`
 		text-transform: uppercase;
 		margin-bottom: 26px;
 
+		color: ${({ theme }) => theme.color.primary};
+
 		@media (max-height: 400px) {
 			margin-bottom: 16px;
 		}
+	}
+
+	> p {
+		margin-bottom: 16px;
 	}
 `;
 

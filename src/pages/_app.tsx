@@ -20,13 +20,14 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
 		<>
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
 				<title>CSS Editor</title>
 			</Head>
 			<ThemeProvider theme={defaultTheme}>
-				<AnimatePresence exitBeforeEnter onExitComplete={handleExitComplete}>
-					<GlobalStyle />
-					<Component {...pageProps} key={router.route} />
-				</AnimatePresence>
+				{/* <AnimatePresence exitBeforeEnter onExitComplete={handleExitComplete}> */}
+				<GlobalStyle />
+				<Component {...pageProps} key={router.route} />
+				{/* </AnimatePresence> */}
 			</ThemeProvider>
 		</>
 	);

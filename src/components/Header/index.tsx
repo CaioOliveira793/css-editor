@@ -13,9 +13,6 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
 				<Link href="/properties">
 					<Anchor>Properties</Anchor>
 				</Link>
-				<Link href="/properties">
-					<Anchor>Properties</Anchor>
-				</Link>
 			</Navigation>
 		</Container>
 	);
