@@ -19,9 +19,13 @@ export const Container = styled.div`
 	justify-content: center;
 	position: relative;
 
-	max-width: 1800px;
+	max-width: 1200px;
 	height: 700vh;
-	margin: 0px auto 0px auto;
+	margin: 0px 48px;
+
+	@media (min-width: 1296px) {
+		margin: 0px auto;
+	}
 
 	@media (min-height: 1000px) {
 		grid-template-rows: 78px 137px calc(100vh - ${animatedSectionTopWithGap32});
@@ -48,7 +52,6 @@ export const PresentationContainer = styled.div`
 	top: 78px;
 	left: 0px;
 	right: 0px;
-	padding: 0px 48px;
 
 	> h1 {
 		font-size: 32px;
@@ -80,7 +83,6 @@ export const TextSection = styled.section`
 	align-items: flex-start;
 	justify-content: space-between;
 
-	padding-left: 48px;
 	margin-bottom: 32px;
 
 	@media (min-height: 1000px) {
@@ -91,13 +93,13 @@ export const TextSection = styled.section`
 		top: calc(${animatedSectionTopWithGap24});
 	}
 
-	@media (max-height: 570px) {
+	@media (max-height: 660px) {
 		justify-content: center;
 	}
 `;
 
 export const AnimatedText = styled(motion.div)`
-	@media (max-height: 570px) {
+	@media (max-height: 660px) {
 		position: absolute;
 	}
 
@@ -132,7 +134,6 @@ export const AnimationSection = styled.section`
 	left: 0px;
 	right: 0px;
 
-	padding-right: 48px;
 	margin: 32px 0px;
 
 	@media (min-height: 1000px) {

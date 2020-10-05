@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { useTransform, useViewportScroll } from 'framer-motion';
 import { FaMinus } from 'react-icons/fa';

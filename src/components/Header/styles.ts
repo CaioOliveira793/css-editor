@@ -7,7 +7,7 @@ export const Container = styled.header`
 	justify-content: space-between;
 
 	width: 100%;
-	padding: 24px 48px;
+	padding: 24px 0px;
 `;
 
 export const PageTitle = styled.strong`

@@ -1,10 +1,82 @@
 import React from 'react';
+import Link from 'next/link';
+import { FaEdit } from 'react-icons/fa';
 
-import { Container } from '../../styles/pages/properties/index';
+import Header from '../../components/Header';
+
+import { Container, ItemContainer, ItemBox } from '../../styles/pages/properties/index';
+
 
 const Properties: React.FC = () => {
 	return (
-		<div>yeah</div>
+		<Container>
+			<Header />
+			<h1>Chose a item</h1>
+			<ItemContainer>
+				<Link href="/properties/position">
+					<ItemBox>
+						<FaEdit size={140} />
+						<span>position</span>
+					</ItemBox>
+				</Link>
+
+				<Link href="/properties/gradient">
+					<ItemBox>
+						<FaEdit size={140} />
+						<span>gradient</span>
+					</ItemBox>
+				</Link>
+
+				<Link href="/properties/box-shadow">
+					<ItemBox>
+						<FaEdit size={140} />
+						<span>box-shadow</span>
+					</ItemBox>
+				</Link>
+
+				<Link href="/properties/box-sizing">
+					<ItemBox>
+						<FaEdit size={140} />
+						<span>box-sizing</span>
+					</ItemBox>
+				</Link>
+
+				<Link href="/properties/font">
+					<ItemBox>
+						<FaEdit size={140} />
+						<span>font</span>
+					</ItemBox>
+				</Link>
+
+				<Link href="/properties/text">
+					<ItemBox>
+						<FaEdit size={140} />
+						<span>text</span>
+					</ItemBox>
+				</Link>
+
+				<Link href="/properties/transform">
+					<ItemBox>
+						<FaEdit size={140} />
+						<span>transform</span>
+					</ItemBox>
+				</Link>
+
+				<Link href="/properties/cubic-bezier">
+					<ItemBox>
+						<FaEdit size={140} />
+						<span>cubic-bezier</span>
+					</ItemBox>
+				</Link>
+
+				<Link href="/properties/entities">
+					<ItemBox>
+						<FaEdit size={140} />
+						<span>entities</span>
+					</ItemBox>
+				</Link>
+			</ItemContainer>
+		</Container>
 	);
 }
 
