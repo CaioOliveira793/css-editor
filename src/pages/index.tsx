@@ -31,7 +31,7 @@ const Home: React.FC = () => {
 
 	return (
 		<Container>
-			<StyledHeader />
+			<StyledHeader links={[{ label: 'properties', href: '/properties' }]} />
 			<PresentationContainer>
 				<h1>CSS in a intuitive way</h1>
 				<p>Edit your CSS properties to make peaces of layout.</p>

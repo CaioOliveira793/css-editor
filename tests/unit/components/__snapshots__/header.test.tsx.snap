@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header macth the snapshot 1`] = `
+<header
+  className="styles__Container-sc-1qfn4k8-0 bHEOWO"
+>
+  <strong
+    className="styles__PageTitle-sc-1qfn4k8-1 jckDPd"
+  >
+    CSS Editor
+  </strong>
+  <nav
+    className="styles__Navigation-sc-1qfn4k8-2 jUgoPa"
+  >
+    <a
+      className="styles__Anchor-sc-1qfn4k8-3 dkiYpB"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      properties
+    </a>
+  </nav>
+</header>
+`;

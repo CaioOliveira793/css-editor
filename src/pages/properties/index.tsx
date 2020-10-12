@@ -10,7 +10,7 @@ import { Container, ItemContainer, ItemBox } from '../../styles/pages/properties
 const Properties: React.FC = () => {
 	return (
 		<Container>
-			<Header />
+			<Header links={[]} />
 			<h1>Chose a item</h1>
 			<ItemContainer>
 				<Link href="/properties/position">
