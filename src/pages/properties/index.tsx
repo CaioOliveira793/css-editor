@@ -5,16 +5,22 @@ import { FaEdit } from 'react-icons/fa';
 import Header from '../../components/Header';
 
 import PostionAnimation, { PositionHandles } from '../../animations/Position';
+import GradientAnimation, { GradientHandles } from '../../animations/Gradient';
 
 import { Container, ItemContainer, ItemBox } from '../../styles/pages/properties/index';
 
 
 const Properties: React.FC = () => {
 	const positionAnimationRef = useRef<PositionHandles>(null);
+	const gradientAnimationRef = useRef<GradientHandles>(null);
 
-	const startAnimation = useCallback(() => {
+	const startPositionAnimation = useCallback(() => {
 		positionAnimationRef.current.startIfNotRunning();
 	}, [positionAnimationRef]);
+
+	const startGradientAnimation = useCallback(() => {
+		gradientAnimationRef.current.startIfNotRunning();
+	}, [gradientAnimationRef]);
 
 	return (
 		<Container>
@@ -22,17 +28,15 @@ const Properties: React.FC = () => {
 			<h1>Chose a item</h1>
 			<ItemContainer>
 				<Link href="/properties/position">
-					<ItemBox
-						onMouseEnter={startAnimation}
-					>
+					<ItemBox onMouseEnter={startPositionAnimation}>
 						<PostionAnimation size={140} ref={positionAnimationRef} />
 						<span>position</span>
 					</ItemBox>
 				</Link>
 
 				<Link href="/properties/gradient">
-					<ItemBox>
-						<FaEdit size={140} />
+					<ItemBox onMouseEnter={startGradientAnimation}>
+						<GradientAnimation size={140} ref={gradientAnimationRef} />
 						<span>gradient</span>
 					</ItemBox>
 				</Link>

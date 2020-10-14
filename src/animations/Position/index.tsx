@@ -12,7 +12,6 @@ export interface PositionHandles {
 
 export interface PositionProps {
 	size: number;
-	ref: Ref<PositionHandles>
 }
 
 
@@ -44,7 +43,7 @@ const Position: React.ForwardRefRenderFunction<PositionHandles, PositionProps> =
 			transition: {
 				duration: 1.2,
 				times: [0, 0.4, 0.4, 1],
-				delay: i * 0.3,
+				delay: i * 0.2,
 			}
 		}),
 	};
