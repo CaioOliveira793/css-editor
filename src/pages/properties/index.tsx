@@ -1,21 +1,31 @@
-import React from 'react';
+import React, { useCallback, useRef } from 'react';
 import Link from 'next/link';
 import { FaEdit } from 'react-icons/fa';
 
 import Header from '../../components/Header';
 
+import PostionAnimation, { PositionHandles } from '../../animations/Position';
+
 import { Container, ItemContainer, ItemBox } from '../../styles/pages/properties/index';
 
 
 const Properties: React.FC = () => {
+	const positionAnimationRef = useRef<PositionHandles>(null);
+
+	const startAnimation = useCallback(() => {
+		positionAnimationRef.current.startIfNotRunning();
+	}, [positionAnimationRef]);
+
 	return (
 		<Container>
 			<Header links={[]} />
 			<h1>Chose a item</h1>
 			<ItemContainer>
 				<Link href="/properties/position">
-					<ItemBox>
-						<FaEdit size={140} />
+					<ItemBox
+						onMouseEnter={startAnimation}
+					>
+						<PostionAnimation size={140} ref={positionAnimationRef} />
 						<span>position</span>
 					</ItemBox>
 				</Link>

@@ -38,14 +38,17 @@ export const ItemBox = styled.a`
 	align-items: center;
 	justify-content: center;
 
-	padding: 8px;
+	padding: 18px 18px;
 	border-radius: 5px;
 	border: ${({ theme }) => theme.color.secondary} 2px solid;
 
+	cursor: pointer;
+
 	> svg {
-		width: 180px;
 		color: ${({ theme }) => theme.color.secondary};
 	}
 
-	cursor: pointer;
+	> span {
+		margin-top: 8px;
+	}
 `;
