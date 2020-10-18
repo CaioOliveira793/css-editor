@@ -1,12 +1,12 @@
 import React, { useCallback, useRef } from 'react';
 import Link from 'next/link';
-import { FaEdit } from 'react-icons/fa';
 
 import Header from '../../components/Header';
 
 import PostionAnimation, { PositionHandles } from '../../animations/Position';
 import GradientAnimation, { GradientHandles } from '../../animations/Gradient';
 import BoxShadowAnimation, { BoxShadowHandles } from '../../animations/BoxShadow';
+import BoxSizingAnimation, { BoxSizingHandles } from '../../animations/BoxSizing';
 
 import { Container, ItemContainer, ItemBox } from '../../styles/pages/properties/index';
 
@@ -15,6 +15,7 @@ const Properties: React.FC = () => {
 	const positionAnimationRef = useRef<PositionHandles>(null);
 	const gradientAnimationRef = useRef<GradientHandles>(null);
 	const boxShadowAnimationRef = useRef<BoxShadowHandles>(null);
+	const boxSizingAnimationRef = useRef<BoxSizingHandles>(null);
 
 	const startPositionAnimation = useCallback(() => {
 		positionAnimationRef.current.startIfNotRunning();
@@ -27,6 +28,10 @@ const Properties: React.FC = () => {
 	const startBoxShadowAnimation = useCallback(() => {
 		boxShadowAnimationRef.current.startIfNotRunning();
 	}, [boxShadowAnimationRef]);
+
+	const startBoxSizingAnimation = useCallback(() => {
+		boxSizingAnimationRef.current.startIfNotRunning();
+	}, [boxSizingAnimationRef]);
 
 	return (
 		<Container>
@@ -55,8 +60,8 @@ const Properties: React.FC = () => {
 				</Link>
 
 				<Link href="/properties/box-sizing">
-					<ItemBox>
-						<FaEdit size={140} />
+					<ItemBox onMouseEnter={startBoxSizingAnimation}>
+						<BoxSizingAnimation size={140} ref={boxSizingAnimationRef} />
 						<span>box-sizing</span>
 					</ItemBox>
 				</Link>
@@ -66,30 +71,30 @@ const Properties: React.FC = () => {
 						<FaEdit size={140} />
 						<span>font</span>
 					</ItemBox>
-				</Link>
+				</Link> */}
 
-				<Link href="/properties/text">
+				{/* <Link href="/properties/text">
 					<ItemBox>
 						<FaEdit size={140} />
 						<span>text</span>
 					</ItemBox>
-				</Link>
+				</Link> */}
 
-				<Link href="/properties/transform">
+				{/* <Link href="/properties/transform">
 					<ItemBox>
 						<FaEdit size={140} />
 						<span>transform</span>
 					</ItemBox>
-				</Link>
+				</Link> */}
 
-				<Link href="/properties/cubic-bezier">
+				{/* <Link href="/properties/cubic-bezier">
 					<ItemBox>
 						<FaEdit size={140} />
 						<span>cubic-bezier</span>
 					</ItemBox>
-				</Link>
+				</Link> */}
 
-				<Link href="/properties/entities">
+				{/* <Link href="/properties/entities">
 					<ItemBox>
 						<FaEdit size={140} />
 						<span>entities</span>
