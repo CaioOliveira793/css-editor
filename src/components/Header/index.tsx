@@ -8,7 +8,7 @@ interface HeaderLink extends LinkProps {
 };
 
 interface HeaderProps extends HTMLAttributes<{}> {
-	links: HeaderLink[];
+	links?: HeaderLink[];
 };
 
 const Header: React.FC<HeaderProps> = ({ className, links }) => {
@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ className, links }) => {
 		<Container className={className}>
 			<PageTitle>CSS Editor</PageTitle>
 			<Navigation>
-				{links.map(({ label, ...linkProps }, index) => (
+				{links?.map(({ label, ...linkProps }, index) => (
 					<Link key={index} {...linkProps}>
 						<Anchor>{label}</Anchor>
 					</Link>

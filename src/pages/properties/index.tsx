@@ -6,6 +6,7 @@ import Header from '../../components/Header';
 
 import PostionAnimation, { PositionHandles } from '../../animations/Position';
 import GradientAnimation, { GradientHandles } from '../../animations/Gradient';
+import BoxShadowAnimation, { BoxShadowHandles } from '../../animations/BoxShadow';
 
 import { Container, ItemContainer, ItemBox } from '../../styles/pages/properties/index';
 
@@ -13,6 +14,7 @@ import { Container, ItemContainer, ItemBox } from '../../styles/pages/properties
 const Properties: React.FC = () => {
 	const positionAnimationRef = useRef<PositionHandles>(null);
 	const gradientAnimationRef = useRef<GradientHandles>(null);
+	const boxShadowAnimationRef = useRef<BoxShadowHandles>(null);
 
 	const startPositionAnimation = useCallback(() => {
 		positionAnimationRef.current.startIfNotRunning();
@@ -22,9 +24,13 @@ const Properties: React.FC = () => {
 		gradientAnimationRef.current.startIfNotRunning();
 	}, [gradientAnimationRef]);
 
+	const startBoxShadowAnimation = useCallback(() => {
+		boxShadowAnimationRef.current.startIfNotRunning();
+	}, [boxShadowAnimationRef]);
+
 	return (
 		<Container>
-			<Header links={[]} />
+			<Header />
 			<h1>Chose a item</h1>
 			<ItemContainer>
 				<Link href="/properties/position">
@@ -42,8 +48,8 @@ const Properties: React.FC = () => {
 				</Link>
 
 				<Link href="/properties/box-shadow">
-					<ItemBox>
-						<FaEdit size={140} />
+					<ItemBox onMouseEnter={startBoxShadowAnimation}>
+						<BoxShadowAnimation size={140} ref={boxShadowAnimationRef} />
 						<span>box-shadow</span>
 					</ItemBox>
 				</Link>
@@ -55,7 +61,7 @@ const Properties: React.FC = () => {
 					</ItemBox>
 				</Link>
 
-				<Link href="/properties/font">
+				{/* <Link href="/properties/font">
 					<ItemBox>
 						<FaEdit size={140} />
 						<span>font</span>
@@ -88,7 +94,7 @@ const Properties: React.FC = () => {
 						<FaEdit size={140} />
 						<span>entities</span>
 					</ItemBox>
-				</Link>
+				</Link> */}
 			</ItemContainer>
 		</Container>
 	);

@@ -12,7 +12,7 @@ export interface BlockProps {
 }
 
 
-export const Container = styled(motion.div) <ContainerProps>`
+export const Container = styled.div <ContainerProps>`
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, 1fr);

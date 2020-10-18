@@ -1,19 +1,13 @@
 import React, { forwardRef, useContext, useImperativeHandle, useRef } from 'react';
 import { DefaultTheme, ThemeContext } from 'styled-components';
-import { useAnimation, VisualElementAnimationControls } from 'framer-motion';
+import { useAnimation, Variants, VisualElementAnimationControls } from 'framer-motion';
 
 import { Container } from './styles';
+import { AnimationHandles, AnimationProps } from '../AnimationInterfaces';
 
-export interface GradientProps {
-	size: number;
-}
+export interface GradientProps extends AnimationProps { }
 
-export interface GradientHandles {
-	start: () => Promise<any>;
-	startIfNotRunning: () => Promise<void>;
-	stop: () => void;
-	subscribe: (controls: VisualElementAnimationControls<{}, {}>) => () => boolean;
-}
+export interface GradientHandles extends AnimationHandles { }
 
 const Gradient: React.ForwardRefRenderFunction<GradientHandles, GradientProps> = ({ size }, ref) => {
 	const theme = useContext<DefaultTheme>(ThemeContext);
@@ -35,7 +29,7 @@ const Gradient: React.ForwardRefRenderFunction<GradientHandles, GradientProps> =
 		};
 	});
 
-	const gradientVariant = {
+	const gradientVariant: Variants = {
 		mountGradient: {
 			background: [
 				`linear-gradient(90deg,
@@ -65,7 +59,7 @@ const Gradient: React.ForwardRefRenderFunction<GradientHandles, GradientProps> =
 			size={size}
 			animate={control}
 			variants={gradientVariant}
-		></Container>
+		/>
 	);
 }
 

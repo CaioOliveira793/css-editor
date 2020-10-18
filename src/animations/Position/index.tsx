@@ -1,18 +1,12 @@
 import React, { useImperativeHandle, forwardRef, Ref, useRef } from 'react';
-import { useAnimation, VisualElementAnimationControls } from 'framer-motion';
+import { useAnimation, Variants, VisualElementAnimationControls } from 'framer-motion';
 
+import { AnimationHandles, AnimationProps } from '../AnimationInterfaces';
 import { Container, Block, BlockProps } from './styles';
 
-export interface PositionHandles {
-	start: () => Promise<any>;
-	startIfNotRunning: () => Promise<void>;
-	stop: () => void;
-	subscribe: (controls: VisualElementAnimationControls<{}, {}>) => () => boolean;
-}
+export interface PositionHandles extends AnimationHandles { }
 
-export interface PositionProps {
-	size: number;
-}
+export interface PositionProps extends AnimationProps { }
 
 
 const Position: React.ForwardRefRenderFunction<PositionHandles, PositionProps> = ({ size }, ref) => {
@@ -35,7 +29,7 @@ const Position: React.ForwardRefRenderFunction<PositionHandles, PositionProps> =
 		};
 	});
 
-	const blockVariant = {
+	const blockVariant: Variants = {
 		mountPosition: (i: number) => ({
 			top: ['0px', '0px', `${size}px`, '0px'],
 			scale: [1, 0.5, 1, 1],
@@ -61,6 +55,7 @@ const Position: React.ForwardRefRenderFunction<PositionHandles, PositionProps> =
 		<Container size={size}>
 			{blocks.map((props, index) => (
 				<Block
+					key={index}
 					{...props}
 					animate={control}
 					variants={blockVariant}
